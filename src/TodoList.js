@@ -1,71 +1,62 @@
 /**
  * Connect this component to the Redux state for the items and the input value
  */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import TodoItem from './TodoItem';
 import TodoInput from './TodoInput';
+import {addItem, editInput, checkItem} from './actions';
 
 class TodoList extends Component {
-	state = {
-		items: this.props.items,
-		inputValue: '',
-	}
 
-	// Check an item
-	checkItem = (text) => {
-		this.setState({
-			items: this.state.items.map(item => {
-				if (item.text !== text) return item;
+    // Check an item
+    checkItem = (text) => {
+        this
+            .props
+            .dispatch(checkItem(text));
+    }
 
-				return {
-					...item,
-					checked: !item.checked,
-				};
-			}),
-		});
-	}
+    // Add an item
+    addItem = (evt) => {
+        evt.preventDefault();
+        this
+            .props
+            .dispatch(addItem(this.props.state.inputValue));
+    }
 
-	// Add an item
-	addItem = (evt) => {
-		evt.preventDefault();
-		this.setState({
-			items: this.state.items.concat([{
-				text: this.state.inputValue,
-				checked: false,
-			}]),
-		});
-	}
+    // Edit the input
+    editInput = (evt) => {
+        this
+            .props
+            .dispatch(editInput(evt.target.value, false));
+    }
 
-	// Edit the input
-	editInput = (evt) => {
-		this.setState({
-			inputValue: evt.target.value,
-		})
-	}
-
-	render() {
-		return (
-			<div>
-				<ul>
-					{this.state.items.map((item, index) => (
-						<li key={index}>
-							<TodoItem
-								onClick={this.checkItem}
-								text={item.text}
-								checked={item.checked}
-							/>
-						</li>
-					))}
-				</ul>
-				<form onSubmit={this.addItem}>
-					<TodoInput
-						onChange={this.editInput}
-						value={this.state.value}
-					/>
-				</form>
-			</div>
-		)
-	}
+    render() {
+        return (
+            <div>
+                <ul>
+                    {this
+                        .props
+                        .state
+                        .items
+                        .map((item, index) => {
+                            return (
+                                <li key={index}>
+                                    <TodoItem onClick={this.checkItem} text={item.text} checked={item.checked}/>
+                                </li>
+                            )
+                        })}
+                </ul>
+                <form onSubmit={this.addItem}>
+                    <TodoInput onChange={this.editInput} value={this.props.state.inputValue}/>
+                </form>
+            </div>
+        )
+    }
 }
 
-export default TodoList;
+const mapStateToProps = (state) => {
+    return {state: state};
+}
+
+export default connect(mapStateToProps)(TodoList);

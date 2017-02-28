@@ -1,5 +1,6 @@
 exports[`addItem should have a type of "ADD_ITEM" 1`] = `
 Object {
+  "text": undefined,
   "type": "ADD_ITEM",
 }
 `;
@@ -20,14 +21,14 @@ Object {
 
 exports[`editInput should have a type of "EDIT_INPUT" 1`] = `
 Object {
-  "text": undefined,
+  "inputValue": undefined,
   "type": "EDIT_INPUT",
 }
 `;
 
 exports[`editInput should pass on the text passed to it as the first argument 1`] = `
 Object {
-  "text": "Some text",
+  "inputValue": "Some text",
   "type": "EDIT_INPUT",
 }
 `;

@@ -16,7 +16,7 @@ Object {
     },
     Object {
       "checked": false,
-      "text": "New item",
+      "text": undefined,
     },
   ],
 }
@@ -44,7 +44,7 @@ Object {
 
 exports[`test should edit the inputValue in the state when the editInput action is dispatched 1`] = `
 Object {
-  "inputValue": "New input value",
+  "inputValue": undefined,
   "items": Array [
     Object {
       "checked": true,

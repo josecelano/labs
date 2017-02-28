@@ -1,0 +1,29 @@
+
+.wrapper {
+	width: 100%;
+}
+
+/* Fix the plot background color to be the same as the body */
+.wrapper .main-svg:first-of-type {
+	background-color: #FAFAFA!important;
+}
+
+.wrapper .bg {
+	fill: #FAFAFA!important;
+}
+
+@media screen and (max-width: 425px) {
+
+	/* Show a message on small screens about landscape mode */
+	.wrapper:before {
+		content: "Rotate your phone to see the graph in its full glory. 🔄📈";
+		display: block;
+		font-size: 1em;
+		background-color: palevioletred;
+		color: white;
+		border-radius: 3px;
+		padding: 0.5em 1em;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+}

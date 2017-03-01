@@ -1,0 +1,12 @@
+exports[`<TodoList /> should render an todo list 1`] = `
+<div>
+  <ul />
+  <form
+    onSubmit={[Function]}>
+    <input
+      onChange={[Function]}
+      type="text"
+      value={undefined} />
+  </form>
+</div>
+`;

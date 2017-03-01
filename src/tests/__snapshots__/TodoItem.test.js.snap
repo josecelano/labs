@@ -1,0 +1,8 @@
+exports[`<TodoItem /> should render an item 1`] = `
+<label>
+  <input
+    checked={undefined}
+    onChange={[Function]}
+    type="checkbox" />
+</label>
+`;

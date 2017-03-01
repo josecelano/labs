@@ -11,7 +11,7 @@ import {
 	editInput,
 } from './actions';
 
-class TodoList extends Component {
+export class TodoList extends Component {
 	// Check an item
 	checkItem = (text) => {
 		this.props.dispatch(checkItem(text));

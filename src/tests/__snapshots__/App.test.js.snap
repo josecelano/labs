@@ -1,0 +1,40 @@
+exports[`<App /> should provide an store to todo list 1`] = `
+<div>
+  <ul>
+    <li>
+      <label>
+        <input
+          checked={true}
+          onChange={[Function]}
+          type="checkbox" />
+        Get to Las Palmas 🌴
+      </label>
+    </li>
+    <li>
+      <label>
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox" />
+        Learn the basics of React 👩‍🎓
+      </label>
+    </li>
+    <li>
+      <label>
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox" />
+        Go surfing 🏄
+      </label>
+    </li>
+  </ul>
+  <form
+    onSubmit={[Function]}>
+    <input
+      onChange={[Function]}
+      type="text"
+      value={undefined} />
+  </form>
+</div>
+`;
